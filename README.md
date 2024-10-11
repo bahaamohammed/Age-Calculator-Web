@@ -35,7 +35,7 @@ The **Age Calculator** is a simple and responsive web-based application built wi
     ```
 2. Navigate to the project directory:
     ```bash
-    cd age-calculator
+    cd Age-Calculator-Web
     ```
 3. Open the `index.html` file in your browser to run the app locally.
 
