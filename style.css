@@ -1,31 +1,50 @@
-*{
+/* Prevent horizontal scrolling by ensuring content doesn't overflow */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Hide any horizontal overflow */
+}
+
+/* Reset default margins, paddings, and apply box-sizing to include padding and borders */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
 }
-.container{
+
+/* Full-width container with gradient background and white text */
+.container {
     width: 100%;
     min-height: 100vh;
     background: linear-gradient(135deg, #4203a9, #90bafc);
     color: #fff;
     padding: 10px;
+    overflow: hidden; /* Ensure no content overflows outside the container */
 }
-.calculator{
+
+/* Centering the calculator and setting minimum width */
+.calculator {
     width: 100%;
-    min-width: 600px;
-    margin-left: 10%;
-    margin-top: 10%;
+    max-width: 600px; /* Limit max width to avoid overflow */
+    margin: 10%; /* Center horizontally */
 }
-.calculator h1{
+
+/* Large heading for calculator */
+.calculator h1 {
     font-size: 60px;
 }
-.calculator h1 span{
+
+/* Highlighting the span inside the heading */
+.calculator h1 span {
     display: block;
     color: #ffff76;
 }
-.input-box{
-    width: 30%;
+
+/* Styling input box: flex container with background transparency */
+.input-box {
+    width: 100%; /* Full width within calculator */
+    max-width: 600px; /* Limit width to avoid overflow */
     margin: 40px 0;
     padding: 35px;
     border-radius: 10px;
@@ -33,23 +52,47 @@
     display: flex;
     align-items: center;
 }
-.input-box input{
+
+/* Input field inside input box */
+.input-box input {
     flex: 1;
     margin-right: 20px;
     padding: 14px 20px;
-    border: 0;
-    outline: 0;
+    border: none;
+    outline: none;
     font-size: 18px;
     border-radius: 5px;
     position: relative;
 }
-.input-box button{
+
+/* Button in input box with yellow background and pointer cursor */
+.input-box button {
     background-color: #ffff76;
-    border: 0;
-    outline: 0;
+    border: none;
+    outline: none;
     padding: 15px 30px;
     border-radius: 5px;
     font-weight: 500;
     color: #333;
     cursor: pointer;
+}
+
+/* Customize the date picker calendar button */
+.input-box input::-webkit-calendar-picker-indicator {
+    position: absolute;
+    width: auto;
+    height: auto;
+    background-position: calc(100% - 10px);
+    background-size: 30px;
+    cursor: pointer;
+}
+
+/* Result text size */
+#result {
+    font-size: 20px;
+}
+
+/* Highlight result numbers in yellow */
+#result span {
+    color: #ffff76;
 }
